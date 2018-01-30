@@ -19,9 +19,9 @@ const kristUtils = {
 		return "e";
 	},
 
-	makeV2Address(key) {
+	makeV2Address(key, customPrefix) {
 		const chars = ["", "", "", "", "", "", "", "", ""];
-		let prefix = "k";
+		let prefix = customPrefix || "k";
 		let hash = kristUtils.sha256(kristUtils.sha256(key));
 
 		for (let i = 0; i <= 8; i++) {
@@ -44,8 +44,8 @@ const kristUtils = {
 		return prefix;
 	},
 
-	isValidKristAddress(address) {
-		return /^(?:k[a-z0-9]{9}|[a-f0-9]{10})$/i.test(address);
+	isValidKristAddress(address, customPrefix) {
+		return new RegExp(`^(?:${customPrefix || "k"}[a-z0-9]{9}|[a-f0-9]{10})$`, "i").test(address);
 	},
 
 	isValidName(name) {
