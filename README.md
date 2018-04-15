@@ -31,4 +31,7 @@ kristUtils.isValidName("khugepoopy.kst");
 
 // check if an a record is valid
 kristUtils.isValidARecord("arecord");
+
+// parse CommonMeta
+kristUtils.parseCommonMeta("item@shop.kst;username=Lemmmy;return=lemmmy@switchcraft.kst");
 ```
