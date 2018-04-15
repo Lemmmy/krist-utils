@@ -6,17 +6,8 @@ const kristUtils = {
 	},
 
 	hexToBase36(input) {
-		for (let i = 6; i <= 251; i += 7) {
-			if (input <= i) {
-				if (i <= 69) {
-					return String.fromCharCode(("0".charCodeAt(0)) + (i - 6) / 7);
-				}
-
-				return String.fromCharCode(("a".charCodeAt(0)) + ((i - 76) / 7));
-			}
-		}
-
-		return "e";
+		const byte = 48 + Math.floor(input / 7);
+		return String.fromCharCode(byte + 39 > 122 ? 101 : byte > 57 ? byte + 39 : byte);
 	},
 
 	makeV2Address(key, customPrefix) {
