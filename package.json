@@ -1,6 +1,6 @@
 {
   "name": "krist-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utilities for the Krist cryptocurrency.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,5 @@
     "url": "https://github.com/Lemmmy/krist-utils/issues"
   },
   "homepage": "https://github.com/Lemmmy/krist-utils#readme",
-  "dependencies": {
-    "crypto": "^1.0.1"
-  }
+  "dependencies": {}
 }

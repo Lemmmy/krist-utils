@@ -44,6 +44,14 @@ const kristUtils = {
 		return prefix;
 	},
 
+	makeKristWalletPrivatekey(key, doublekey) {
+		return kristUtils.sha256("KRISTWALLET" + key) + "-" + (doublekey ? kristUtils.sha256(doublekey) : "000");
+	},
+
+	makeKristWalletAddress(key, doublekey, customPrefix) {
+		return kristUtils.makeV2Address(kristUtils.makeKristWalletPrivatekey(key, doublekey), customPrefix);
+	},
+
 	isValidKristAddress(address, customPrefix) {
 		return new RegExp(`^(?:${customPrefix || "k"}[a-z0-9]{9}|[a-f0-9]{10})$`, "i").test(address);
 	},
