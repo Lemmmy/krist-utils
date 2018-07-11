@@ -20,7 +20,7 @@ const kristUtils = {
 			hash = kristUtils.sha256(kristUtils.sha256(hash));
 		}
 
-		for (i = 0; i <= 8;) {
+		for (let i = 0; i <= 8;) {
 			const index = parseInt(hash.substring(2 * i, 2 + (2 * i)), 16) % 9;
 
 			if (chars[index] === "") {
