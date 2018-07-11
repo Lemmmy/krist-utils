@@ -1,6 +1,6 @@
 {
   "name": "krist-utils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Utilities for the Krist cryptocurrency.",
   "main": "index.js",
   "scripts": {
