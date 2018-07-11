@@ -13,5 +13,10 @@ module "krist-utils" {
   export function isValidName(name: string): boolean;
   export function isValidARecord(aRecord: string): boolean;
 
-  export function parseCommonMeta(metadata: string): Record<string, string>;
+  export function parseCommonMeta(metadata: string): {
+    [x: string]: string; 
+    metaname: string?;
+    name: string?;
+    recipient: string?;
+  };
 }
